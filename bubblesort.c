@@ -15,7 +15,7 @@
  #include<stdlib.h>
  void swap(int *,int *);								//swap two integer values
  void display(int [] ,int);								//displays the elements in the array
- void bubblesort(int [],int); 							//performs bubble sort
+ void bubblesort(int [],int); 								//performs bubble sort
  int main(){
 	 int n,i;
 	 printf("Enter size of array:");
@@ -29,6 +29,7 @@
 	bubblesort(arr,n);
 	printf("\nElements after sorting are: ");
 	display(arr,n);
+	 return 0;
 
 }
 
