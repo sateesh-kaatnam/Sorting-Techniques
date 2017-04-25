@@ -1,13 +1,20 @@
 /*
- Problem:	Bubble Sort (Ascending Order)
+ Problem:	selecction Sort (Ascending Order)
  Author	:	Sateesh-Kaatnam
  
  Notes:
  
- --> Bubble sort is a simplest sorting algorithm which works on exchanging of
- adjacent elements if they are out of order and it is repeated until array is sorted.
+ --> slection sort is a simplest sorting algorithm which is not efficient for larger inputs.
+	 
+	 The algorithm maintains two subarrays in a given array.
+
+		1) The subarray which is already sorted.
+		2) Remaining subarray which is unsorted.
+
+	In every iteration of selection sort, the minimum element (considering ascending order)
+	from the unsorted subarray is picked and moved to the sorted subarray. 
  
- --> Time Complexity : O(n^2)	 
+ --> Time Complexity : O(n^2) (for alll best,average,worst cases)	 
  
  */
  
@@ -15,7 +22,7 @@
  #include<stdlib.h>
  void swap(int *,int *);								//swap two integer values
  void display(int [] ,int);								//displays the elements in the array
- void bubblesort(int [],int); 							//performs bubble sort
+ void selectionsort(int [],int); 						//performs selection sort
  int main(){
 	 int n,i;
 	 printf("Enter size of array:");
@@ -26,18 +33,17 @@
 		scanf("%d",arr+i);								//reading elements into array
 	printf("\nElements before sorting are: ");
 	display(arr,n);
-	bubblesort(arr,n);
+	selectionsort(arr,n);
 	printf("\nElements after sorting are: ");
 	display(arr,n);
 	return 0;
+
 }
 
 void swap(int *a,int *b){
-
 int temp=*a;
 *a=*b;
 *b=temp;
-
 }
 
 void display(int arr[],int n){
@@ -46,15 +52,15 @@ void display(int arr[],int n){
 		printf("%d ",arr[i]);
 }
 
-void bubblesort(int arr[],int n){
+void selectionsort(int arr[],int n){
 
 	int i,j;
-	for(i=0;i<n-1;i++)
+	for(i=0;i<n;i++)
 	{
-		for(j=0;j<n-i-1;j++)
+		for(j=i+1;j<n;j++)
 		{
-			if(arr[j]>arr[j+1])
-				swap(&arr[j],&arr[j+1]);
+			if(arr[i]>arr[j])
+				swap(&arr[i],&arr[j]);
 		}
 	}		
 }
