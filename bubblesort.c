@@ -1,7 +1,6 @@
 /*
  Problem:	Bubble Sort Algorithm (Ascending Order)
- Author	:	Sateesh-Kaatnam
- 
+
  Notes:
  
  --> Bubble sort is a simplest sorting algorithm which works on exchanging of
